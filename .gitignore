@@ -1,3 +1,38 @@
+
+# Created by https://www.gitignore.io/api/python,angular
+
+### Angular ###
+## Angular ##
+# compiled output
+/dist
+/tmp
+/app/**/*.js
+/app/**/*.js.map
+
+# dependencies
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+#System Files
+.DS_Store
+
+### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -8,7 +43,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -41,6 +75,7 @@ htmlcov/
 .coverage
 .coverage.*
 .cache
+.pytest_cache/
 nosetests.xml
 coverage.xml
 *.cover
@@ -49,10 +84,6 @@ coverage.xml
 # Translations
 *.mo
 *.pot
-
-# Django stuff:
-*.log
-local_settings.py
 
 # Flask stuff:
 instance/
@@ -74,18 +105,19 @@ target/
 .python-version
 
 # celery beat schedule file
-celerybeat-schedule
+celerybeat-schedule.*
 
 # SageMath parsed files
 *.sage.py
 
-# dotenv
+# Environments
 .env
-
-# virtualenv
 .venv
+env/
 venv/
 ENV/
+env.bak/
+venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -99,3 +131,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+
+# End of https://www.gitignore.io/api/python,angular
