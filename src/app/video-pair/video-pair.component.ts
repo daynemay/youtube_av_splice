@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'video-pair',
@@ -9,18 +9,38 @@ import { Component, OnInit } from '@angular/core';
 export class VideoPairComponent implements OnInit {
   videoPlayer: YT.Player;
   audioPlayer: YT.Player;
-  videoId: string;
-  audioId: string;
+  @Input() videoId: string;
+  @Input() audioId: string;
 
-  constructor() { }
+  constructor() {
+    // debugger;
+    // this.videoPlayer = new YT.Player(null, null);
+    // this.audioPlayer = new YT.Player(null, null);
+  }
 
   ngOnInit() { }
 
-  setVideo(player) {
+  setVideoId(videoId: string){
+    this.videoId = videoId;
+  }
+  setAudioId(audioId: string){
+    this.audioId = audioId;
+  }
+
+  pause(){
+    if (this.videoPlayer) { this.videoPlayer.pauseVideo(); }
+    if (this.audioPlayer) { this.audioPlayer.pauseVideo(); }
+  }
+  play(){
+    if (this.videoPlayer) { this.videoPlayer.playVideo(); }
+    if (this.audioPlayer) { this.audioPlayer.playVideo(); }
+  }
+
+  videoReady(player) {
     this.videoPlayer = player;
     this.start();
   }
-  setAudio(player) {
+  audioReady(player) {
     this.audioPlayer = player;
     this.start();
   }
@@ -37,7 +57,7 @@ export class VideoPairComponent implements OnInit {
   onAudioChange(event){
   }
   start() {
-    if (!this.videoPlayer || !this.audioPlayer) {
+    if (!this.videoPlayer || !this.audioPlayer || !this.audioId || !this.videoId) {
       return;
     }
     this.audioPlayer.setSize(0,0);
