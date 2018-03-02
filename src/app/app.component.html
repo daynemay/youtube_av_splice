@@ -1,2 +1,21 @@
-<video-pair></video-pair>
+<section>
+  <h1>Audio and Video Details</h1>
+  <section>
+    <h2>Video</h2>
+    <input type="text" placeholder="Video ID" [(ngModel)]="videoId">
+    Speed<speed-select></speed-select>
+    <input placeholder="Start time (s)" type="number">
+  </section>
+  <section>
+    <h2>Audio</h2>
+    <input type="text" placeholder="Audio ID" [(ngModel)]="audioId">
+    Speed<speed-select></speed-select>
+    <input placeholder="Start time (s)" type="number">
+  </section>
+  <button (click)="splice()">Splice</button>
+</section>
+
+<main>
+    <video-pair></video-pair>
+</main>
 

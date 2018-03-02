@@ -9,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class VideoPairComponent implements OnInit {
   videoPlayer: YT.Player;
   audioPlayer: YT.Player;
-  videoId: string = 'nHO50-7l-Vg';
-  audioId: string = 'vHP4VbhtGJ4';
+  videoId: string;
+  audioId: string;
 
   constructor() { }
 
