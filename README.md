@@ -1,5 +1,6 @@
 # YoutubeAvSplice
 
+Intended result :
 * Enter a YouTube URL to use for video. Enter a start time for the video.
 * Enter a Youtube URL to use for audio. Enter a start time for the audio.
 * Press **Play**.
